@@ -12,7 +12,7 @@
 <body>
 
 	<ul class = "menu">
-  		<li>Menu: <a href="#" onclick = "muda_estado();">Q</a>
+  		<li>Menu: <a href="javascript:void(0)" onclick = "muda_estado();">Q</a>
   			<ul id="submenu" class = "submenu" style="display: none">
 				<li><a href="novo_post.jsp">Novo post</a></li>
   				<li><a href="todos_posts.jsp">Todos os posts</a></li>

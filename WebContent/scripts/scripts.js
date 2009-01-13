@@ -94,3 +94,9 @@ function valida_pesquisa_titulo() {
 	}
 	return true;
 }
+
+function mostrar_detalhes() {
+	var d = document.getElementById("detalhes");
+	
+	d.style.display = "block";
+}
