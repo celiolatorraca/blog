@@ -12,7 +12,7 @@
 <body>
 
 	<form action="novo_post.do" method="post">
-		<table class = "post">
+		<table class = "post" width="10px">
 			<tr>
 				<td align="center" colspan="2">
 					<label style="font-size: x-large">Formulário</label>
@@ -48,7 +48,7 @@
 					<label><strong>Post:</strong></label>
 				</td>
 				<td>
-					<textarea id = "post" name = "post" rows="10" cols="50"></textarea>
+					<textarea id = "mensagem" name = "mensagem" rows="10" cols="50"></textarea>
 				</td>
 			</tr>
 			<tr>

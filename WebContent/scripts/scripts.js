@@ -34,7 +34,7 @@ function valida_campos() {
 	var nome = document.getElementById("nome");
 	var data = document.getElementById("data");
 	var titulo = document.getElementById("titulo");
-	var post = document.getElementById("post");
+	var post = document.getElementById("mensagem");
 
 	if (nome.value == "") {
 		alert("Preencha o nome corretamente.");

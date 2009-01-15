@@ -20,7 +20,7 @@
 			</tr>
 			<tr id="pesquisa_autor" style="display: none">
 				<td>
-					<input id="autor" name="autor" type="text" size="30">
+					<input id="nome" name="nome" type="text" size="30">
 				</td>
 				<td>
 					<input type="submit" value="Pesquisar" onclick="return valida_pesquisa_autor();">

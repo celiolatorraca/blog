@@ -12,9 +12,29 @@
    	<servlet-class>br.blog.servlets.PreencheFormularioServlet</servlet-class>
   </servlet>
   
+  <servlet>
+  	<servlet-name>pesquisaAutor</servlet-name>
+  	<servlet-class>br.blog.servlets.PesquisaAutorServlet</servlet-class>
+  </servlet>
+  
+   <servlet>
+  	<servlet-name>pesquisaTitulo</servlet-name>
+  	<servlet-class>br.blog.servlets.PesquisaTituloServlet</servlet-class>
+  </servlet>
+    
   <servlet-mapping>
   	<servlet-name>preencheFormulario</servlet-name>
   	<url-pattern>/novo_post.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>pesquisaAutor</servlet-name>
+  	<url-pattern>/pesquisa_autor.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>pesquisaTitulo</servlet-name>
+  	<url-pattern>/pesquisa_titulo.do</url-pattern>
   </servlet-mapping>
   
   <error-page>
