@@ -19,7 +19,7 @@ public class PostFacade {
 	 * Retorna um post cadastrado no sistema
 	 * @param string - Titulo do post a ser recuperado
 	 * @return Post - Post cadastrado no sistema ou null caso nenhum item
-	 * 				  satisfaça a busca
+	 * 				  satisfaï¿½a a busca
 	 */
 	public static Post get(String titulo) {
 		return PostDAO.get(titulo);
@@ -36,10 +36,14 @@ public class PostFacade {
 	 * Atualiza um post cadastrado no sistema
 	 * @param novoPost - Post a ser atualizado
 	 * @return boolean - true, caso o post tenha sido atualizado com sucesso ou false
-	 * 					 caso tenha havido falha na atualização do post
+	 * 					 caso tenha havido falha na atualizaï¿½ï¿½o do post
 	 */
 	public static boolean update(Post novoPost) {
 		return PostDAO.update(novoPost);
+	}
+	
+	public static ArrayList<Post> getAllPosts() {
+		return PostDAO.getAllPosts();
 	}
 	
 }

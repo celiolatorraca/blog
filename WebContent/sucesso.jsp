@@ -19,7 +19,7 @@
 				<br/><br/>
 				<strong style="font-size: x-large">Post de <%= post.getNome() %> cadastrado no dia <%= post.getData() %></strong>
 				<br/><br/><br/><br/>
-				<a href="blog.jsp">Voltar para o blog</a>
+				<a href="inicio.jsp" target="principal">Voltar ao blog</a>
 			</center>
 			<%
 		}

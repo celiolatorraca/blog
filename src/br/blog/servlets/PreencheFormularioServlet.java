@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.jmx.snmp.Timestamp;
+//Modificar isso dps!!
+import com.sun.jmx.snmp.*;
 
 import br.blog.dominio.Post;
 import br.blog.exceptions.CampoObrigatorioException;
@@ -26,11 +27,11 @@ public class PreencheFormularioServlet extends HttpServlet {
 		String mensagem = request.getParameter("mensagem");
 
 		try {
-			validaCampos(nome, data, titulo, mensagem); //ValidaCampos pode lançar exception
+			validaCampos(nome, data, titulo, mensagem); //ValidaCampos pode lanï¿½ar exception
 			Post post = new Post(nome, titulo, mensagem, data);
 			request.setAttribute("formulario", post);
 
-			//Aki ficará o armazenamento na ED
+			//Aki ficarï¿½ o armazenamento na ED
 			PostFacade.save(post);
 
 			RequestDispatcher rd = request.getRequestDispatcher("sucesso.jsp");

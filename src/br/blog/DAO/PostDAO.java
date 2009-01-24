@@ -22,7 +22,7 @@ public class PostDAO {
 	/**
 	 * Recupera da base de dados um post armazendao
 	 * @param titulo - titulo do post a ser recuperado
-	 * @return Post - Post a ser recuperado ou null, caso nenhum post satisfaça a busca
+	 * @return Post - Post a ser recuperado ou null, caso nenhum post satisfaï¿½a a busca
 	 */
 	public static Post get(String titulo) {
 		return DataBase.getPostByTitle(titulo);
@@ -39,7 +39,7 @@ public class PostDAO {
 	 * Remove um post armazenado na base de dados. 
 	 * @param novoPost - Post a ser removido da base de dados
 	 * @return boolean - retorna true caso o post tenha sido removido com sucesso ou
-	 * 					 false caso a remoção seja mal-sucedida
+	 * 					 false caso a remoï¿½ï¿½o seja mal-sucedida
 	 */
 	public static boolean remove(Post novoPost) {
 		return DataBase.removPost(novoPost);
@@ -48,10 +48,13 @@ public class PostDAO {
 	 * Atualiza um Post armazenado no sistema
 	 * @param novoPost - post a ser atualizado
 	 * @return boolean - retorna true caso o post tenha sido atualizado com sucesso ou
-	 * 					 false caso a atualização seja mal-sucedida  
+	 * 					 false caso a atualizaï¿½ï¿½o seja mal-sucedida  
 	 */
 	public static boolean update(Post novoPost) {
 		return DataBase.atualizaPost(novoPost);
+	}
+	public static ArrayList<Post> getAllPosts() {
+		return DataBase.getAllPosts();
 	}
 
 }

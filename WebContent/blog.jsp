@@ -14,7 +14,7 @@
 			<iframe src="menu.jsp" width="200px" height="500px" align="top" frameborder="0"></iframe>
 		</td>
 		<td>
-			<iframe width="1050px" height="500px" align="top" frameborder="0" name="principal"></iframe>
+			<iframe src="inicio.jsp" width="1050px" height="500px" align="top" frameborder="0" name="principal"></iframe>
 		</td>
 	</tr>
 </table>

@@ -11,23 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.blog.dominio.Post;
 import br.blog.exceptions.NomeInexistenteException;
+import br.blog.exceptions.TituloInexistenteException;
 import br.blog.facade.PostFacade;
 
-public class PesquisaAutorServlet extends HttpServlet {
+public class PesquisaTituloServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		ArrayList<Post> posts = PostFacade.getPostsByName(request.getParameter("nome"));
+		Post post = PostFacade.get(request.getParameter("titulo"));
 		
 		try {
-			verificaExistencia(posts);
-			request.setAttribute("posts", posts);
-						
+			VerificaExistencia(post);
+			request.setAttribute("post", post);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("resultado_pesquisa.jsp");
 			rd.forward(request, response);
-		} catch(NomeInexistenteException e) {
+		} catch(TituloInexistenteException e) {
 			request.setAttribute("exception", e);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("fracasso.jsp");
@@ -35,9 +36,10 @@ public class PesquisaAutorServlet extends HttpServlet {
 		}
 	}
 	
-	public void verificaExistencia(ArrayList<Post> posts) throws NomeInexistenteException {
-		if (posts.isEmpty()) {
-			throw new NomeInexistenteException("Nenhum post encontrado com esse autor.");
+	public void VerificaExistencia(Post post) throws TituloInexistenteException {
+		if (post == null) {
+			throw new TituloInexistenteException("Nenhum post encontrado com esse título.");
 		}
 	}
+	
 }

@@ -15,7 +15,7 @@ public class DataBase extends ArrayList<Post> {
 		return db;
 	}
 	/**
-	 * Armazena post não existente. Retorna false caso ja tenha sido cadastrado
+	 * Armazena post nï¿½o existente. Retorna false caso ja tenha sido cadastrado
 	 * post com titulo semelhante
 	 * @param novoPost - Post a ser armazenado
 	 * @return boolean - retorna false caso a tentativa de armazenar seja mal-sucedida
@@ -33,9 +33,9 @@ public class DataBase extends ArrayList<Post> {
 		return getInstance().add(novoPost);
 	}
 	/**
-	 * Recupera um post armazenado, através de seu index
+	 * Recupera um post armazenado, atravï¿½s de seu index
 	 * @param index - index do post a ser recuperado 
-	 * @return Post que ocupa o index passado, ou null caso o index passo seja inválido
+	 * @return Post que ocupa o index passado, ou null caso o index passo seja invï¿½lido
 	 */
 	public static Post getPostByIndex(int index){
 		if(index >= getInstance().size() || getInstance().isEmpty()){
@@ -45,7 +45,7 @@ public class DataBase extends ArrayList<Post> {
 		}
 	}
 	/**
-	 * Recupera um post armazernado, através de um objeto post
+	 * Recupera um post armazernado, atravï¿½s de um objeto post
 	 * @param novoPost - Post a ser recuperado
 	 * @return Post - Post armazenado na Base de Dados
 	 */
@@ -63,7 +63,7 @@ public class DataBase extends ArrayList<Post> {
 	}
 	
 	/**
-	 * Retorna um ArrayList com posts do nome informado, ou ArrayList vazio, caso não tenha 
+	 * Retorna um ArrayList com posts do nome informado, ou ArrayList vazio, caso nï¿½o tenha 
 	 * nenhum post armazenado
 	 * @param nome - String com nome do autor do post
 	 * @return ArrayList - ArrayList contendo os post do autor
@@ -91,7 +91,7 @@ public class DataBase extends ArrayList<Post> {
 	 * Atualiza os dados de um Post armazenado
 	 * @param novoPost - Post com dados atualizados
 	 * @return boolean - true, caso os dados tenham diso atualizado com sucesso ou 
-	 * 						   false, caso a atualização tenha sido mal-sucedida
+	 * 						   false, caso a atualizaï¿½ï¿½o tenha sido mal-sucedida
 	 */
 	public static boolean atualizaPost(Post novoPost) {
 		for(Post p : getInstance()){
@@ -105,5 +105,12 @@ public class DataBase extends ArrayList<Post> {
 		return false;
 	}
 	
+	public static ArrayList<Post> getAllPosts() {
+		ArrayList<Post> posts = new ArrayList<Post>();
+		for(Post p:getInstance()){
+			posts.add(p);
+		}
+		return posts;		
+	}
 	
 }

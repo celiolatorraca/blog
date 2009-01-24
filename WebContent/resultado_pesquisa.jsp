@@ -11,12 +11,13 @@
 <body>
 
 	<%
-		ArrayList<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
+		Post post = (Post) request.getAttribute("post");
 		%>
 		<center>
 			<table>
 			<%
-			if (!posts.isEmpty()) {
+			if (post == null) {
+				ArrayList<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
 				%>
 				<tr>
 					<td style="font-size: x-large" align="center">
@@ -33,9 +34,9 @@
 				%>
 				<tr>
 					<td>
-						<font style="font-weight: bold"><%= posts.get(x).getTitulo() %></font> postado por 
-						<font style="font-weight: bold"><%= posts.get(x).getNome() %></font> no dia 
-						<font style="font-weight: bold"><%= posts.get(x).getData() %>.</font>
+						Título: <font style="font-weight: bold"><%= posts.get(x).getTitulo() %></font><br/> 
+						Autor: <font style="font-weight: bold"><%= posts.get(x).getNome() %></font><br/>
+						Data: <font style="font-weight: bold"><%= posts.get(x).getData() %></font>
 					</td>
 				</tr>
 				<tr>
@@ -50,10 +51,35 @@
 						<br/><br/><br/>
 					</td>
 				</tr>
+				<%
+				}
+			} else {
+				%>
+				<tr>
+					<td>
+						Post: <font style="font-weight: bold"><%= post.getTitulo() %></font><br/>
+						Autor: <font style="font-weight: bold"><%= post.getNome() %></font><br/>
+						Data: <font style="font-weight: bold"><%= post.getData() %></font>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="50">
+						<font style="font-style: italic">
+							<%= post.getMensagem() %>
+						</font>
+					</td>
+				</tr>
 			<%
 			}
-		}
-	%>
+			%>
+				<tr>
+					<td align="center">
+						<a href="pesquisar.jsp" target="principal">Pesquisar novamente</a>
+				<tr>
+					<td align="center">
+						<a href="inicio.jsp" target="principal">Voltar ao Blog</a>
+					</td>
+				</tr>
 			</table>
 		</center>
 

@@ -1,6 +1,7 @@
 package br.blog.dominio;
 
-import com.sun.jmx.snmp.Timestamp;
+//Modificar isso dps!!
+import com.sun.jmx.snmp.*;
 
 public class Post {
 	private String nome;
