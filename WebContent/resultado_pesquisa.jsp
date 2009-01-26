@@ -14,26 +14,18 @@
 		Post post = (Post) request.getAttribute("post");
 		%>
 		<center>
-			<table>
+			<table border="1">
 			<%
 			if (post == null) {
 				ArrayList<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
 				%>
-				<tr>
-					<td style="font-size: x-large" align="center">
-						<strong>Posts de <%= posts.get(0).getNome() %>:</strong>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br/>
-					</td>
-				</tr>
+				<strong style="font-size: x-large">Posts de <%= posts.get(0).getNome() %>:</strong>
+				<br/><br/><br/>
 				<%
 				for (int x = 0; x < posts.size(); x++) {
 				%>
 				<tr>
-					<td>
+					<td align="center">
 						Título: <font style="font-weight: bold"><%= posts.get(x).getTitulo() %></font><br/> 
 						Autor: <font style="font-weight: bold"><%= posts.get(x).getNome() %></font><br/>
 						Data: <font style="font-weight: bold"><%= posts.get(x).getData() %></font>
@@ -41,46 +33,42 @@
 				</tr>
 				<tr>
 					<td colspan="50">
+						<br/>
 						<font style="font-style: italic">
-							<%= posts.get(x).getMensagem() %>
+							<%= posts.get(x).getMensagem().replaceAll("\r\n","<br/>") %>
 						</font>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br/><br/><br/>
+						<br/><br/>
 					</td>
 				</tr>
 				<%
 				}
 			} else {
 				%>
-				<tr>
-					<td>
+				<tr bordercolor="black">
+					<td align="center">
 						Post: <font style="font-weight: bold"><%= post.getTitulo() %></font><br/>
 						Autor: <font style="font-weight: bold"><%= post.getNome() %></font><br/>
 						Data: <font style="font-weight: bold"><%= post.getData() %></font>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="50">
+					<td colspan="50" >
+						<br/>
 						<font style="font-style: italic">
-							<%= post.getMensagem() %>
+							<%= post.getMensagem().replaceAll("\r\n","<br/>") %>
 						</font>
+						<br/><br/><br/>
 					</td>
 				</tr>
 			<%
 			}
 			%>
-				<tr>
-					<td align="center">
-						<a href="pesquisar.jsp" target="principal">Pesquisar novamente</a>
-				<tr>
-					<td align="center">
-						<a href="inicio.jsp" target="principal">Voltar ao Blog</a>
-					</td>
-				</tr>
 			</table>
+			
+			<br/><br/>
+			<a href="pesquisar.jsp" target="principal">Pesquisar novamente</a><br/>
+			<a href="inicio.jsp" target="principal">Voltar ao Blog</a>
+			
 		</center>
 
 </body>

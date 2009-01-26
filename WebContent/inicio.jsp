@@ -21,7 +21,7 @@
 		  <% if (!posts.isEmpty()) { %>
 		  		<tr>
 		  			<td>
-		  				<strong style="font-size: x-large">Últimos posts:</strong>
+		  				<strong style="font-size: x-large">Três últimos posts:</strong>
 		  			</td>
 		  		</tr>
 		  		<tr>
@@ -34,7 +34,7 @@
 			 		cont++;
 				%>
 				<tr>
-					<td>
+					<td align="center">
 						Título: <font style="font-weight: bold"><%= posts.get(x).getTitulo() %></font><br/> 
 						Autor: <font style="font-weight: bold"><%= posts.get(x).getNome() %></font><br/>
 						Data: <font style="font-weight: bold"><%= posts.get(x).getData() %></font>
@@ -43,7 +43,7 @@
 				<tr>
 					<td colspan="50">
 						<font style="font-style: italic">
-							<%= posts.get(x).getMensagem() %>
+							<%= posts.get(x).getMensagem().replaceAll("\r\n","<br/>") %>
 						</font>
 					</td>
 				</tr>
